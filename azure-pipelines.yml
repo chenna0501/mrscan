@@ -7,3 +7,16 @@ jobs:
     vmImage: 'ubuntu-latest'
   steps:
   - template: templates\step\npm-steps.yml
+- job: Windows
+  pool:
+    name: sharmi
+  steps:
+  - script: echo This script runs before the template's steps, only on Windows.
+  - template: templates\step\npm-steps.yml
+  - script: echo This execution is from windows Agent.
+- job: macOS
+  pool:
+    vmImage: 'macOS-latest'
+  steps:
+  - template: templates\step\npm-steps.yml
+  - script: echo This execution is from macOS Agent.
