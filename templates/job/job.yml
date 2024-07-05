@@ -1,0 +1,1 @@
+name: jobtemp_$(Date:yyyyMMdd)$(Rev:.r)

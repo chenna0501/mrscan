@@ -1,0 +1,9 @@
+name: mrscan_$(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+- main
+jobs:
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - template: templates\step\npm-steps.yml
